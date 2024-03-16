@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration </title>
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<body>
+<div class="container">
+    <h2>User Registration</h2>
+    <form th:action="@{/image}" method="post" enctype="multipart/form-data" th:object="${user}">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter Email" th:field="*{username}">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <div class="form-group">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div></body>
+</html>

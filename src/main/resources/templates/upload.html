@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Image </title>
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<body>
+<div class="container">
+  <h2>Upload Image</h2>
+  <form th:action="@{/users/save}" method="post" enctype="multipart/form-data" th:object="${user}">
+    <label for="username">User name:</label>
+    <input type="text" class="form-control" id="username" placeholder="Enter Username" th:field="*{username}">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <div class="form-group">
+      <input type="hidden" th:field="*{photos}"/>
+      <label for="fileImage">Photos:</label>
+      <input type="file" class="form-control" id="fileImage" name="image" accept="image/gif,image/png, image/jpg">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div></body>
+</html>
